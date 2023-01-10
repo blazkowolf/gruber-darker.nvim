@@ -17,5 +17,5 @@ use {
 ```
 
 [gruber-darker-theme]: https://github.com/rexim/gruber-darker-theme
-[gruber-darker]: http://jblevins.org/projects/emacs-color-themes/color-theme-gruber-darker.el.html
+[gruber-darker]: https://jblevins.org/projects/emacs-color-themes/gruber-darker-theme.el.html
 [gruber-dark]: http://daringfireball.net/projects/bbcolors/schemes/
