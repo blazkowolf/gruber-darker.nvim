@@ -9,9 +9,11 @@ of a BBEdit [colorscheme][gruber-dark]_
 
 ```lua
 use {
-  name = "",
+  "blazkowolf/gruber-darker.nvim",
   config = function()
-    require("gruber-darker").setup()
+    require("gruber-darker").setup({
+      -- possible config values here...
+    })
   end
 }
 ```
