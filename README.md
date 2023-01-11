@@ -10,12 +10,7 @@ __This is a work in progress, and is not currently stable__
 ### Packer
 
 ```lua
-use {
-  "blazkowolf/gruber-darker.nvim",
-  config = function()
-    require("gruber-darker").setup()
-  end
-}
+use "blazkowolf/gruber-darker.nvim"
 ```
 
 Then, somewhere in your `init.lua`, set the colorscheme like this
