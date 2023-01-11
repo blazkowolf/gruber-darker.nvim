@@ -83,7 +83,7 @@ local highlights = {
   Identifier = { fg = c.default["fg+1"] }, -- (preferred) any variable name
   Function = { fg = c.default.niagara }, -- function name (also: methods for classes)
 
-  -- Statement = { fg = c.magenta }, -- (preferred) any statement
+  Statement = { fg = c.default.yellow }, -- (preferred) any statement
   -- Conditional   = { }, --  if, then, else, endif, switch, etc.
   -- Repeat        = { }, --   for, do, while, etc.
   -- Label         = { }, --    case, default, etc.
@@ -102,7 +102,7 @@ local highlights = {
   -- Structure     = { }, --  struct, union, enum, etc.
   -- Typedef       = { }, --  A typedef
 
-  -- Special = { fg = c.blue1 }, -- (preferred) any special symbol
+  Special = { fg = c.default.yellow }, -- (preferred) any special symbol
   -- SpecialChar   = { }, --  special character in a constant
   -- Tag           = { }, --    you can use CTRL-] on this
   -- Delimiter     = { }, --  character that needs attention
@@ -136,63 +136,63 @@ local highlights = {
   -- TSError -> Error for example, so you do not have to define these unless
   -- you explicitly want to support Treesitter's improved syntax awareness.
 
-  -- TSAnnotation        = { };    -- For C++/Dart attributes, annotations that can be attached to the code to denote some kind of meta information.
-  -- TSAttribute         = { };    -- (unstable) TODO: docs
-  -- TSBoolean           = { };    -- For booleans.
-  -- TSCharacter         = { };    -- For characters.
-  -- TSComment           = { };    -- For comment blocks.
+  -- TSAnnotation        = { },    -- For C++/Dart attributes, annotations that can be attached to the code to denote some kind of meta information.
+  -- TSAttribute         = { },    -- (unstable) TODO: docs
+  TSBoolean           = { fg = c.default.quartz },    -- For booleans.
+  TSCharacter         = { fg = c.default.green },    -- For characters.
+  TSComment           = { fg = c.default.brown },    -- For comment blocks.
   -- TSNote = { fg = c.bg, bg = c.info },
-  -- ["@text.warning"] = { fg = c.bg, bg = c.warning },
-  -- ["@text.danger"] = { fg = c.bg, bg = c.error },
+  ["@text.warning"] = { fg = c.default.red },
+  ["@text.danger"] = { fg = c.default.white, bg = c.default.red },
   -- ["@constructor"] = { fg = c.magenta }, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
-  -- TSConditional       = { };    -- For keywords related to conditionnals.
-  -- TSConstant          = { };    -- For constants
-  -- TSConstBuiltin      = { };    -- For constant that are built in the language: `nil` in Lua.
-  -- TSConstMacro        = { };    -- For constants that are defined by macros: `NULL` in C.
-  -- TSError             = { };    -- For syntax/parser errors.
-  -- TSException         = { };    -- For exception related keywords.
+  TSConditional       = { fg = c.default.yellow },    -- For keywords related to conditionnals.
+  TSConstant          = { fg = c.default.quartz },    -- For constants
+  -- TSConstBuiltin      = { },    -- For constant that are built in the language: `nil` in Lua.
+  -- TSConstMacro        = { },    -- For constants that are defined by macros: `NULL` in C.
+  -- TSError             = { },    -- For syntax/parser errors.
+  -- TSException         = { },    -- For exception related keywords.
   -- ["@field"] = { fg = c.green1 }, -- For fields.
-  -- TSFloat             = { };    -- For floats.
-  -- TSFunction          = { };    -- For function (calls and definitions).
-  -- TSFuncBuiltin       = { };    -- For builtin functions: `table.insert` in Lua.
-  -- TSFuncMacro         = { };    -- For macro defined fuctions (calls and definitions): each `macro_rules` in Rust.
-  -- TSInclude           = { };    -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
+  -- TSFloat             = { },    -- For floats.
+  -- TSFunction          = { },    -- For function (calls and definitions).
+  -- TSFuncBuiltin       = { },    -- For builtin functions: `table.insert` in Lua.
+  -- TSFuncMacro         = { },    -- For macro defined fuctions (calls and definitions): each `macro_rules` in Rust.
+  -- TSInclude           = { },    -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
   -- ["@keyword"] = { fg = c.purple, style = options.styles.keywords }, -- For keywords that don't fall in previous categories.
   -- ["@keyword.function"] = { fg = c.magenta, style = options.styles.functions }, -- For keywords used to define a fuction.
   -- ["@label"] = { fg = c.blue }, -- For labels: `label:` in C and `:label:` in Lua.
-  -- TSMethod            = { };    -- For method calls and definitions.
-  -- TSNamespace         = { };    -- For identifiers referring to modules and namespaces.
-  -- TSNone              = { };    -- TODO: docs
-  -- TSNumber            = { };    -- For all numbers
+  -- TSMethod            = { },    -- For method calls and definitions.
+  -- TSNamespace         = { },    -- For identifiers referring to modules and namespaces.
+  -- TSNone              = { },    -- TODO: docs
+  -- TSNumber            = { },    -- For all numbers
   -- ["@operator"] = { fg = c.blue5 }, -- For any operator: `+`, but also `->` and `*` in C.
   -- ["@parameter"] = { fg = c.yellow }, -- For parameters of a function.
-  -- TSParameterReference= { };    -- For references to parameters of a function.
+  -- TSParameterReference= { },    -- For references to parameters of a function.
   -- ["@property"] = { fg = c.green1 }, -- Same as `TSField`.
   -- ["@punctuation.delimiter"] = { fg = c.blue5 }, -- For delimiters ie: `.`
   -- ["@punctuation.bracket"] = { fg = c.fg_dark }, -- For brackets and parens.
   -- ["@punctuation.special"] = { fg = c.blue5 }, -- For special punctutation that does not fall in the catagories before.
-  -- TSRepeat            = { };    -- For keywords related to loops.
-  -- TSString            = { };    -- For strings.
+  TSRepeat            = { fg = c.default.yellow },    -- For keywords related to loops.
+  TSString            = { fg = c.default.green },    -- For strings.
   -- ["@string.regex"] = { fg = c.blue6 }, -- For regexes.
   -- ["@string.escape"] = { fg = c.magenta }, -- For escape characters within a string.
-  -- TSSymbol            = { };    -- For identifiers referring to symbols or atoms.
-  -- TSType              = { };    -- For types.
-  -- TSTypeBuiltin       = { };    -- For builtin types.
+  -- TSSymbol            = { },    -- For identifiers referring to symbols or atoms.
+  TSType              = { fg = c.default.quartz },    -- For types.
+  -- TSTypeBuiltin       = { },    -- For builtin types.
   -- ["@variable"] = { style = options.styles.variables }, -- Any variable name that does not have another highlight.
   -- ["@variable.builtin"] = { fg = c.red }, -- Variable names that are defined by the languages, like `this` or `self`.
 
-  -- TSTag               = { };    -- Tags like html tag names.
-  -- TSTagDelimiter      = { };    -- Tag delimiter like `<` `>` `/`
-  -- TSText              = { };    -- For strings considered text in a markup language.
+  -- TSTag               = { },    -- Tags like html tag names.
+  -- TSTagDelimiter      = { },    -- Tag delimiter like `<` `>` `/`
+  -- TSText              = { },    -- For strings considered text in a markup language.
   -- ["@text.reference"] = { fg = c.teal },
-  -- TSEmphasis          = { };    -- For text to be represented with emphasis.
-  -- TSUnderline         = { };    -- For text to be represented with an underline.
-  -- TSStrike            = { };    -- For strikethrough text.
-  -- TSTitle             = { };    -- Text that is part of a title.
-  -- TSLiteral           = { };    -- Literal text.
-  -- TSURI               = { };    -- Any URI like a link or email.
-  -- ["@text.diff.add"] = { link = "DiffAdd" },
-  -- ["@text.diff.delete"] = { link = "DiffDelete" },
+  -- TSEmphasis          = { },    -- For text to be represented with emphasis.
+  -- TSUnderline         = { },    -- For text to be represented with an underline.
+  -- TSStrike            = { },    -- For strikethrough text.
+  -- TSTitle             = { },    -- Text that is part of a title.
+  -- TSLiteral           = { },    -- Literal text.
+  TSURI               = { fg = c.default.niagara, underline = true },    -- Any URI like a link or email.
+  ["@text.diff.add"] = { link = "DiffAdd" },
+  ["@text.diff.delete"] = { link = "DiffDelete" },
 
   -- Cmp
   -- CmpDocumentation = { link = "NormalFloat" },
