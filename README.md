@@ -1,6 +1,6 @@
 # gruber-darker.nvim
 
-_A modern Neovim port of a deftheme [adaptation][gruber-darker] of an Emacs
+_A modern Neovim port of a deftheme [adaptation][gruber-darker-theme] of an Emacs
 [port][gruber-darker] of a BBEdit [colorscheme][gruber-dark]_
 
 __This is a work in progress, and is not currently stable__
