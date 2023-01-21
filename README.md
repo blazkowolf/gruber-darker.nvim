@@ -21,8 +21,8 @@ vim.cmd.colorscheme("GruberDarker")
 
 ## Special thanks
 
-These repositories were great knowledge sources and helped
-immensely with the development of this plugin.
+These repositories were great knowledge sources and their
+inspiration helped immensely with the development of this plugin.
 
 - [rexim/gruber-darker-theme][gruber-darker-theme]
 - [folke/tokyonight.nvim][tokyonight]
