@@ -56,9 +56,9 @@ function M.setup(opts)
 	-- })
 end
 
-M.setup({
-	message = "Test message ensuring when a user calls "
-    .. "`setup` with overrides, their preferences are kept.",
-})
+-- M.setup({
+-- 	message = "Test message ensuring when a user calls "
+--     .. "`setup` with overrides, their preferences are kept.",
+-- })
 
 return M
