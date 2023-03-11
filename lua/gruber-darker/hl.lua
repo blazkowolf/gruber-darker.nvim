@@ -13,7 +13,7 @@ M.groups = {
 	CursorLine = { bg = c.default["bg+1"] }, -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
 	-- Directory = { fg = c.default.lightblue }, -- directory names (and other special names in listings)
 	DiffAdd = { fg = c.default.green, bg = c.default.none }, -- diff mode: Added line |diff.txt|
-	-- DiffChange = { bg = c.diff.change }, -- diff mode: Changed line |diff.txt|
+	DiffChange = { bg = c.default.yellow }, -- diff mode: Changed line |diff.txt|
 	DiffDelete = { fg = c.default["red+1"], bg = c.default.none }, -- diff mode: Deleted line |diff.txt|
 	-- DiffText = { bg = c.diff.text }, -- diff mode: Changed text within a changed line |diff.txt|
 	EndOfBuffer = { fg = c.default.fg, bg = c.default.bg }, -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
@@ -192,6 +192,7 @@ M.groups = {
 	TSURI = { fg = c.default.niagara, underline = true }, -- Any URI like a link or email.
 	["@text.diff.add"] = { link = "DiffAdd" },
 	["@text.diff.delete"] = { link = "DiffDelete" },
+	["@text.diff.change"] = { link = "DiffChange" },
 
 	-- Cmp
 	-- CmpDocumentation = { link = "NormalFloat" },
