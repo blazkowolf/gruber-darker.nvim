@@ -19,6 +19,21 @@ Then, somewhere in your `init.lua`, set the colorscheme like this
 vim.cmd.colorscheme("GruberDarker")
 ```
 
+## Configuration
+
+Additional settings for gruber-darker are:
+
+```lua
+-- setup must be called before loading the colorscheme
+-- Default options:
+require("gruber-darker").setup({
+    bold = true,
+    italic = true,
+    underline = true,
+    comment_italics = true,
+})
+```
+
 ## Special thanks
 
 These repositories were great knowledge sources and their

@@ -10,4 +10,4 @@
 
 -- vim.api.nvim_create_user_command("GruberDarkerTest", R, {})
 
-require("gruber-darker").setup()
+require("gruber-darker").load()

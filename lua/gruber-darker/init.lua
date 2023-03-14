@@ -1,4 +1,3 @@
-local highlights = require("gruber-darker.hl")
 local config = require("gruber-darker.config")
 
 local M = {}
@@ -12,29 +11,16 @@ function M.on_colorscheme()
 end
 
 ---Clear current highlights and set Neovim global `colors_name`
-local function prepare_env()
+function M.load()
 	if vim.g.colors_name then
 		vim.cmd.hi("clear")
 	end
 
 	vim.opt.termguicolors = true
 	vim.g.colors_name = "GruberDarker"
-end
 
----Change colorscheme to GruberDarker
-function M.colorsheme() end
-
----GruberDarker configuration bootstrapper
----@param opts Options
-function M.setup(opts)
-	config.set(opts or {})
-
-	opts = config.get_resolved_opts()
-
-	-- print("message: " .. opts.message)
-
-	prepare_env()
 	-- set highlights here...
+    local highlights = require("gruber-darker.hl")
 	for group, hl in pairs(highlights.groups) do
 		vim.api.nvim_set_hl(0, group, hl)
 	end
@@ -47,6 +33,16 @@ function M.setup(opts)
 			require("gruber-darker").on_colorscheme()
 		end,
 	})
+end
+
+---Change colorscheme to GruberDarker
+function M.colorscheme() end
+
+---GruberDarker configuration bootstrapper
+---@param opts Options
+function M.setup(opts)
+	config.set(opts or {})
+
 	-- vim.api.nvim_create_autocmd("FileType", {
 	-- 	group = gruber_darker_group,
 	-- 	pattern = "qf,help",
