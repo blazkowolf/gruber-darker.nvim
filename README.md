@@ -3,14 +3,26 @@
 _A modern Neovim port of a deftheme [adaptation][gruber-darker-theme] of an Emacs
 [port][gruber-darker] of a BBEdit [colorscheme][gruber-dark]_
 
-__This is a work in progress, and is not currently stable__
+**This is a work in progress**
 
 ## Installation
+
+### Lazy
+
+```lua
+{ "blazkowolf/gruber-darker.nvim" }
+```
 
 ### Packer
 
 ```lua
 use "blazkowolf/gruber-darker.nvim"
+```
+
+### Plug
+
+```vim
+Plug 'blazkowolf/gruber-darker.nvim'
 ```
 
 Then, somewhere in your `init.lua`, set the colorscheme like this
@@ -21,27 +33,27 @@ vim.cmd.colorscheme("GruberDarker")
 
 ## Configuration
 
-Additional settings for gruber-darker are:
+Configuration options can be changed by calling `setup()`
+with your preferences prior to loading the colorscheme.
 
 ```lua
--- setup must be called before loading the colorscheme
--- Default options:
+-- Config defaults
 require("gruber-darker").setup({
-    bold = true,
-    italic = true,
-    underline = true,
-    comment_italics = true,
+  bold = true,
+  italic = true,
+  underline = true,
+  comment_italics = true,
 })
 ```
 
-## Special thanks
+## Credits
 
 These repositories were great knowledge sources and their
 inspiration helped immensely with the development of this plugin.
 
 - [rexim/gruber-darker-theme][gruber-darker-theme]
 - [folke/tokyonight.nvim][tokyonight]
-- [drsooch/gruber-darker-vim][gruber-darker-theme]
+- [drsooch/gruber-darker-vim][gruber-darker-vim]
 
 [gruber-darker-theme]: https://github.com/rexim/gruber-darker-theme
 [gruber-darker]: https://jblevins.org/projects/emacs-color-themes/gruber-darker-theme.el.html
