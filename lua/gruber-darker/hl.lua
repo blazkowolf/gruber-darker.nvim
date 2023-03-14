@@ -1,9 +1,10 @@
 local c = require("gruber-darker.palette")
+local config = require("gruber-darker.config").get_resolved_opts()
 
 local M = {}
 
 M.groups = {
-	Comment = { fg = c.default.brown }, -- any comment
+	Comment = { fg = c.default.brown, italic = config.comment_italics and config.italic }, -- any comment
 	ColorColumn = { bg = c.default["bg+2"] }, -- used for the columns set with 'colorcolumn'
 	Conceal = { fg = c.default.fg, bg = c.default.bg }, -- placeholder characters substituted for concealed text (see 'conceallevel')
 	Cursor = { bg = c.default.yellow }, -- character under the cursor
@@ -13,15 +14,15 @@ M.groups = {
 	CursorLine = { bg = c.default["bg+1"] }, -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
 	-- Directory = { fg = c.default.lightblue }, -- directory names (and other special names in listings)
 	DiffAdd = { fg = c.default.green, bg = c.default.none }, -- diff mode: Added line |diff.txt|
-	DiffChange = { bg = c.default.yellow }, -- diff mode: Changed line |diff.txt|
+	DiffChange = { fg = c.default.yellow, bg = c.default.none }, -- diff mode: Changed line |diff.txt|
 	DiffDelete = { fg = c.default["red+1"], bg = c.default.none }, -- diff mode: Deleted line |diff.txt|
-	-- DiffText = { bg = c.diff.text }, -- diff mode: Changed text within a changed line |diff.txt|
+	DiffText = { fg = c.default.yellow, bg = c.default.none }, -- diff mode: Changed text within a changed line |diff.txt|
 	EndOfBuffer = { fg = c.default.fg, bg = c.default.bg }, -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
-	-- TermCursor  = { }, -- cursor in a focused terminal
+	TermCursor  = { bg = c.default.yellow }, -- cursor in a focused terminal
 	-- TermCursorNC= { }, -- cursor in an unfocused terminal
 	ErrorMsg = { fg = c.default.white, bg = c.default.red }, -- error messages on the command line
 	VertSplit = { fg = c.default["fg+2"], bg = c.default["bg+1"] }, -- the column separating vertically split windows
-	WinSeparator = { fg = c.default["bg+2"], bold = true }, -- the column separating vertically split windows
+	WinSeparator = { fg = c.default["bg+2"], bold = config.bold }, -- the column separating vertically split windows
 	Folded = { fg = c.default.brown, bg = c.default["fg+2"], italic = true }, -- line used for closed folds
 	FoldColumn = { fg = c.default.brown, bg = c.default["fg+2"] }, -- 'foldcolumn'
 	SignColumn = { fg = c.default["bg+2"], bg = c.default.none }, -- column where |signs| are displayed
@@ -29,7 +30,7 @@ M.groups = {
 	-- Substitute = { bg = c.red, fg = c.black }, -- |:substitute| replacement text highlighting
 	LineNr = { fg = c.default["bg+4"] }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
 	CursorLineNr = { fg = c.default.yellow }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
-	MatchParen = { fg = c.default["bg+2"], bg = c.default.yellow }, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
+	MatchParen = { fg = c.default.fg, bg = c.default.wisteria }, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
 	ModeMsg = { fg = c.default["fg+2"] }, -- 'showmode' message (e.g., "-- INSERT -- ")
 	-- MsgArea = { fg = c.fg_dark }, -- Area for messages and cmdline
 	-- MsgSeparator= { }, -- Separator for scrolled messages, `msgsep` flag of 'display'
@@ -45,7 +46,7 @@ M.groups = {
 	PmenuSbar = { bg = c.default.bg }, -- Popup menu: scrollbar.
 	PmenuThumb = { bg = c.default.bg }, -- Popup menu: Thumb of the scrollbar.
 	Question = { fg = c.default.niagara }, -- |hit-enter| prompt and yes/no questions
-	-- QuickFixLine = { bg = c.bg_visual, bold = true }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
+	QuickFixLine = { bg = c.default["bg+2"], bold = config.bold }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
 	Search = { fg = c.default.black, bg = c.default.yellow }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
 	IncSearch = { fg = c.default.black, bg = c.default["fg+2"] }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
 	CurSearch = { link = "IncSearch" },
@@ -58,12 +59,12 @@ M.groups = {
 	StatusLineNC = { fg = c.default.quartz, bg = c.default["bg+1"] }, -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
 	TabLine = { bg = c.default.none }, -- tab pages line, not active tab page label
 	TabLineFill = { fg = c.default["bg+4"], bg = c.default["bg+1"] }, -- tab pages line, where there are no labels
-	TabLineSel = { fg = c.default.yellow, bg = c.default.none, bold = true }, -- tab pages line, active tab page label
+	TabLineSel = { fg = c.default.yellow, bg = c.default.none, bold = config.bold }, -- tab pages line, active tab page label
 	Title = { fg = c.default.quartz }, -- titles for output from ":set all", ":autocmd" etc.
 	Visual = { bg = c.default["bg+2"] }, -- Visual mode selection
 	VisualNOS = { fg = c.default.red }, -- Visual mode selection when vim is "Not Owning the Selection".
 	WarningMsg = { fg = c.default.red }, -- warning messages
-	-- Whitespace = { fg = c.default.black, bg = c.default.red }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
+	Whitespace = { fg = c.default["bg+4"], bg = c.default.none }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
 	WildMenu = { fg = c.default.black, bg = c.default.yellow }, -- current match in 'wildmenu' completion
 
 	-- These groups are not listed as default vim groups,
@@ -75,31 +76,31 @@ M.groups = {
 	Constant = { fg = c.default.quartz }, -- (preferred) any constant
 	String = { fg = c.default.green }, --   a string constant: "this is a string"
 	Character = { fg = c.default.green }, --  a character constant: 'c', '\n'
-	-- Number        = { }, --   a number constant: 234, 0xff
-	-- Boolean       = { }, --  a boolean constant: TRUE, false
-	-- Float         = { }, --    a floating point constant: 2.3e10
+	Number        = { fg = c.default.fg }, --   a number constant: 234, 0xff
+	Boolean       = { fg = c.default.yellow, bold = config.bold }, --  a boolean constant: TRUE, false
+	Float         = { fg = c.default.yellow, bold = config.bold }, --    a floating point constant: 2.3e10
 
 	Identifier = { fg = c.default["fg+1"] }, -- (preferred) any variable name
 	Function = { fg = c.default.niagara }, -- function name (also: methods for classes)
 
 	Statement = { fg = c.default.yellow }, -- (preferred) any statement
-	-- Conditional   = { }, --  if, then, else, endif, switch, etc.
-	-- Repeat        = { }, --   for, do, while, etc.
-	-- Label         = { }, --    case, default, etc.
+	Conditional   = { fg = c.default.yellow, bold = config.bold }, --  if, then, else, endif, switch, etc.
+	Repeat        = { fg = c.default.yellow, bold = config.bold }, --   for, do, while, etc.
+	Label         = { fg = c.default.yellow, bold = config.bold }, --    case, default, etc.
 	Operator = { fg = c.default.yellow }, -- "sizeof", "+", "*", etc.
-	Keyword = { fg = c.default.yellow, bold = true }, --  any other keyword
-	-- Exception     = { }, --  try, catch, throw
+	Keyword = { fg = c.default.yellow, bold = config.bold }, --  any other keyword
+	Exception = { fg = c.default.yellow, bold = config.bold }, --  try, catch, throw
 
 	PreProc = { fg = c.default.quartz }, -- (preferred) generic Preprocessor
-	-- Include       = { }, --  preprocessor #include
-	-- Define        = { }, --   preprocessor #define
-	-- Macro         = { }, --    same as Define
-	-- PreCondit     = { }, --  preprocessor #if, #else, #endif, etc.
+	Include       = { fg = c.default.quartz }, --  preprocessor #include
+	Define        = { fg = c.default.quartz }, --   preprocessor #define
+	Macro         = { fg = c.default.quartz }, --    same as Define
+	PreCondit     = { fg = c.default.quartz }, --  preprocessor #if, #else, #endif, etc.
 
 	Type = { fg = c.default.quartz }, -- (preferred) int, long, char, etc.
-	-- StorageClass  = { }, -- static, register, volatile, etc.
-	-- Structure     = { }, --  struct, union, enum, etc.
-	-- Typedef       = { }, --  A typedef
+	StorageClass  = { fg = c.default.yellow, bold = config.bold }, -- static, register, volatile, etc.
+	Structure     = { fg = c.default.yellow, bold = config.bold }, --  struct, union, enum, etc.
+	Typedef       = { fg = c.default.yellow, bold = config.bold }, --  A typedef
 
 	Special = { fg = c.default.yellow }, -- (preferred) any special symbol
 	-- SpecialChar   = { }, --  special character in a constant
@@ -108,9 +109,9 @@ M.groups = {
 	-- SpecialComment= { }, -- special things inside a comment
 	-- Debug = { fg = c.default["fg+2"] }, --    debugging statements
 
-	Underlined = { underline = true }, -- (preferred) text that stands out, HTML links
-	Bold = { bold = true },
-	Italic = { italic = true },
+	Underlined = { underline = config.underline }, -- (preferred) text that stands out, HTML links
+	Bold = { bold = config.bold },
+	Italic = { italic = config.italic },
 
 	-- ("Ignore", below, may be invisible...)
 	-- Ignore = { }, -- (preferred) left blank, hidden  |hl-Ignore|
@@ -118,15 +119,15 @@ M.groups = {
 	-- Error = { fg = c.error }, -- (preferred) any erroneous construct
 	Todo = { fg = c.default.bg, bg = c.default.yellow }, -- (preferred) anything that needs extra attention; mostly the keywords TODO FIXME and XXX
 
-	markdownHeadingDelimiter = { fg = c.default.niagara, bold = true },
+	markdownHeadingDelimiter = { fg = c.default.niagara, bold = config.bold },
 	markdownCode = { fg = c.default.green },
 	markdownCodeBlock = { fg = c.default.green },
 	-- markdownH1 = { fg = c.magenta, bold = true },
 	-- markdownH2 = { fg = c.blue, bold = true },
 	-- markdownLinkText = { fg = c.blue, underline = true },
-	markdownItalic = { fg = c.default.wisteria, italic = true },
-	markdownBold = { fg = c.default.yellow, bold = true },
-	markdownCodeDelimiter = { fg = c.default.brown, italic = true },
+	markdownItalic = { fg = c.default.wisteria, italic = config.italic },
+	markdownBold = { fg = c.default.yellow, bold = config.bold },
+	markdownCodeDelimiter = { fg = c.default.brown, italic = config.italic },
 	markdownError = { fg = c.default.fg, bg = c.default["bg+1"] },
 
 	-- These groups are for the neovim tree-sitter highlights.
@@ -189,7 +190,7 @@ M.groups = {
 	-- TSStrike            = { },    -- For strikethrough text.
 	-- TSTitle             = { },    -- Text that is part of a title.
 	-- TSLiteral           = { },    -- Literal text.
-	TSURI = { fg = c.default.niagara, underline = true }, -- Any URI like a link or email.
+	TSURI = { fg = c.default.niagara, underline = config.underline }, -- Any URI like a link or email.
 	["@text.diff.add"] = { link = "DiffAdd" },
 	["@text.diff.delete"] = { link = "DiffDelete" },
 	["@text.diff.change"] = { link = "DiffChange" },
