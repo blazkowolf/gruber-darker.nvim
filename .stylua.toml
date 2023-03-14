@@ -1,3 +1,6 @@
+# StyLua configuration values found here:
+# https://github.com/JohnnyMorganz/StyLua#configuration
+
 column_width = 120
 line_endings = "Unix"
 indent_type = "Tabs"

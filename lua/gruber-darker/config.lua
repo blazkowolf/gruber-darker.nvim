@@ -9,25 +9,25 @@
 
 ---@type ConfigMgr
 local M = {
-  resolved_opts = {
-    bold = true,
-    italic = true,
-    underline = true,
-    comment_italics = true,
-  },
+	resolved_opts = {
+		bold = true,
+		italic = true,
+		underline = true,
+		comment_italics = true,
+	},
 }
 
 ---Get GruberDarker user preferences
 ---@return Options
 ---@nodiscard
 function M.get_resolved_opts()
-  return M.resolved_opts
+	return M.resolved_opts
 end
 
 ---Set GruberDarker colorscheme options
 ---@param opts Options
 function M.set(opts)
-  M.resolved_opts = vim.tbl_deep_extend("force", M.resolved_opts, opts)
+	M.resolved_opts = vim.tbl_deep_extend("force", M.resolved_opts, opts)
 end
 
 return M

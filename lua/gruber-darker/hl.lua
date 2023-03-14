@@ -18,7 +18,7 @@ M.groups = {
 	DiffDelete = { fg = c.default["red+1"], bg = c.default.none }, -- diff mode: Deleted line |diff.txt|
 	DiffText = { fg = c.default.yellow, bg = c.default.none }, -- diff mode: Changed text within a changed line |diff.txt|
 	EndOfBuffer = { fg = c.default.fg, bg = c.default.bg }, -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
-	TermCursor  = { bg = c.default.yellow }, -- cursor in a focused terminal
+	TermCursor = { bg = c.default.yellow }, -- cursor in a focused terminal
 	-- TermCursorNC= { }, -- cursor in an unfocused terminal
 	ErrorMsg = { fg = c.default.white, bg = c.default.red }, -- error messages on the command line
 	VertSplit = { fg = c.default["fg+2"], bg = c.default["bg+1"] }, -- the column separating vertically split windows
@@ -76,31 +76,31 @@ M.groups = {
 	Constant = { fg = c.default.quartz }, -- (preferred) any constant
 	String = { fg = c.default.green }, --   a string constant: "this is a string"
 	Character = { fg = c.default.green }, --  a character constant: 'c', '\n'
-	Number        = { fg = c.default.fg }, --   a number constant: 234, 0xff
-	Boolean       = { fg = c.default.yellow, bold = config.bold }, --  a boolean constant: TRUE, false
-	Float         = { fg = c.default.yellow, bold = config.bold }, --    a floating point constant: 2.3e10
+	Number = { fg = c.default.fg }, --   a number constant: 234, 0xff
+	Boolean = { fg = c.default.yellow, bold = config.bold }, --  a boolean constant: TRUE, false
+	Float = { fg = c.default.yellow, bold = config.bold }, --    a floating point constant: 2.3e10
 
 	Identifier = { fg = c.default["fg+1"] }, -- (preferred) any variable name
 	Function = { fg = c.default.niagara }, -- function name (also: methods for classes)
 
 	Statement = { fg = c.default.yellow }, -- (preferred) any statement
-	Conditional   = { fg = c.default.yellow, bold = config.bold }, --  if, then, else, endif, switch, etc.
-	Repeat        = { fg = c.default.yellow, bold = config.bold }, --   for, do, while, etc.
-	Label         = { fg = c.default.yellow, bold = config.bold }, --    case, default, etc.
+	Conditional = { fg = c.default.yellow, bold = config.bold }, --  if, then, else, endif, switch, etc.
+	Repeat = { fg = c.default.yellow, bold = config.bold }, --   for, do, while, etc.
+	Label = { fg = c.default.yellow, bold = config.bold }, --    case, default, etc.
 	Operator = { fg = c.default.yellow }, -- "sizeof", "+", "*", etc.
 	Keyword = { fg = c.default.yellow, bold = config.bold }, --  any other keyword
 	Exception = { fg = c.default.yellow, bold = config.bold }, --  try, catch, throw
 
 	PreProc = { fg = c.default.quartz }, -- (preferred) generic Preprocessor
-	Include       = { fg = c.default.quartz }, --  preprocessor #include
-	Define        = { fg = c.default.quartz }, --   preprocessor #define
-	Macro         = { fg = c.default.quartz }, --    same as Define
-	PreCondit     = { fg = c.default.quartz }, --  preprocessor #if, #else, #endif, etc.
+	Include = { fg = c.default.quartz }, --  preprocessor #include
+	Define = { fg = c.default.quartz }, --   preprocessor #define
+	Macro = { fg = c.default.quartz }, --    same as Define
+	PreCondit = { fg = c.default.quartz }, --  preprocessor #if, #else, #endif, etc.
 
 	Type = { fg = c.default.quartz }, -- (preferred) int, long, char, etc.
-	StorageClass  = { fg = c.default.yellow, bold = config.bold }, -- static, register, volatile, etc.
-	Structure     = { fg = c.default.yellow, bold = config.bold }, --  struct, union, enum, etc.
-	Typedef       = { fg = c.default.yellow, bold = config.bold }, --  A typedef
+	StorageClass = { fg = c.default.yellow, bold = config.bold }, -- static, register, volatile, etc.
+	Structure = { fg = c.default.yellow, bold = config.bold }, --  struct, union, enum, etc.
+	Typedef = { fg = c.default.yellow, bold = config.bold }, --  A typedef
 
 	Special = { fg = c.default.yellow }, -- (preferred) any special symbol
 	-- SpecialChar   = { }, --  special character in a constant
