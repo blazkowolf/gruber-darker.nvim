@@ -21,6 +21,9 @@ function M.load()
 
 	-- set highlights here...
 	local highlights = require("gruber-darker.hl")
+
+  highlights.setup()
+
 	for group, hl in pairs(highlights.groups) do
 		vim.api.nvim_set_hl(0, group, hl)
 	end
