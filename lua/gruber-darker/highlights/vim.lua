@@ -1,6 +1,6 @@
+local Highlight = require("gruber-darker.highlight")
 local c = require("gruber-darker.palette")
 local opts = require("gruber-darker.config").get_opts()
-local Highlight = require("gruber-darker.highlight")
 
 local M = {
 	---@type table<string, Highlight>
