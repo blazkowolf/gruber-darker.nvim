@@ -1,15 +1,26 @@
+---@alias ItalicType
+---|"strings"
+---|"comments"
+---|"operators"
+---|"folds"
+
 ---@class GruberDarkerOpts
 ---@field bold boolean
----@field italic boolean
+---@field italic table<ItalicType, boolean>
+---@field undercurl boolean
 ---@field underline boolean
----@field comment_italics boolean
 
 ---@type GruberDarkerOpts
 local DEFAULTS = {
 	bold = true,
-	italic = true,
+	italic = {
+    strings = true,
+    comments = true,
+    operators = false,
+    folds = true,
+  },
+  -- undercurl = true,
 	underline = true,
-	comment_italics = true,
 }
 
 ---@class ConfigMgr

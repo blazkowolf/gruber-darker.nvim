@@ -16,7 +16,7 @@ end
 
 ---any comment
 M.highlights.comment =
-	Highlight.new("Comment", { fg = c.default.brown, italic = opts.comment_italics and opts.italic })
+	Highlight.new("Comment", { fg = c.default.brown, italic = opts.italic.comments })
 ---used for the columns set with 'colorcolumn'
 M.highlights.color_column = Highlight.new("ColorColumn", { bg = c.default["bg+2"] })
 ---placeholder characters substituted for concealed text (see 'conceallevel')
@@ -42,7 +42,7 @@ M.highlights.diff_delete = Highlight.new("DiffDelete", { fg = c.default["red+1"]
 ---diff mode: Changed text within a changed line |diff.txt|
 M.highlights.diff_text = Highlight.new("DiffText", { fg = c.default.yellow, bg = c.default.none })
 ---filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
-M.highlights.end_of_buffer = Highlight.new("EndOfBuffer", { fg = c.default.fg, bg = c.default.bg })
+M.highlights.end_of_buffer = Highlight.new("EndOfBuffer", { fg = c.default["bg+4"], bg = c.default.none })
 ---cursor in a focused terminal
 M.highlights.term_cursor = Highlight.new("TermCursor", { bg = c.default.yellow })
 ---TermCursorNC= { }, ---cursor in an unfocused terminal
@@ -54,7 +54,7 @@ M.highlights.vert_split = Highlight.new("VertSplit", { fg = c.default["fg+2"], b
 ---the column separating vertically split windows
 M.highlights.win_separator = Highlight.new("WinSeparator", { fg = c.default["bg+2"], bold = opts.bold })
 ---line used for closed folds
-M.highlights.folded = Highlight.new("Folded", { fg = c.default.brown, bg = c.default["fg+2"], italic = true })
+M.highlights.folded = Highlight.new("Folded", { fg = c.default.brown, bg = c.default["fg+2"], italic = opts.italic.folds })
 ---'foldcolumn'
 M.highlights.fold_column = Highlight.new("FoldColumn", { fg = c.default.brown, bg = c.default["fg+2"] })
 ---column where |signs| are displayed
@@ -78,9 +78,9 @@ M.highlights.non_text = Highlight.new("NonText", { fg = c.default["fg+2"] })
 ---normal text
 M.highlights.normal = Highlight.new("Normal", { fg = c.default.fg, bg = c.default.bg })
 ---normal text in non-current windows
-M.highlights.normal_non_current = Highlight.new("NormalNC", { fg = c.default.fg, bg = c.default.bg })
+M.highlights.normal_non_current = Highlight.new("NormalNC", { fg = c.default.fg, bg = c.default["bg-1"] })
 ---normal text in sidebar
-M.highlights.normal_sidebar = Highlight.new("NormalSB", { fg = c.default.fg, bg = c.default.bg })
+M.highlights.normal_sidebar = Highlight.new("NormalSB", { fg = c.default.fg, bg = c.default["bg-1"] })
 ---Normal text in floating windows.
 M.highlights.normal_float = Highlight.new("NormalFloat", { fg = c.default.fg, bg = c.default.bg })
 M.highlights.float_border = Highlight.new("FloatBorder", { fg = c.default["bg+2"], bg = c.default["bg-1"] })
@@ -143,9 +143,9 @@ M.highlights.wild_menu = Highlight.new("WildMenu", { fg = c.default.black, bg = 
 ---(preferred) any constant
 M.highlights.constant = Highlight.new("Constant", { fg = c.default.quartz })
 ---  a string constant: "this is a string"
-M.highlights.string = Highlight.new("String", { fg = c.default.green })
+M.highlights.string = Highlight.new("String", { fg = c.default.green, italic = opts.italic.strings })
 --- a character constant: 'c', '\n'
-M.highlights.character = Highlight.new("Character", { fg = c.default.green })
+M.highlights.character = Highlight.new("Character", { fg = c.default.green, italic = opts.italic.strings })
 ---  a number constant: 234, 0xff
 M.highlights.number = Highlight.new("Number", { fg = c.default.fg })
 --- a boolean constant: TRUE, false
@@ -165,7 +165,7 @@ M.highlights.repeats = Highlight.new("Repeat", { fg = c.default.yellow, bold = o
 ---case, default, etc.
 M.highlights.label = Highlight.new("Label", { fg = c.default.yellow, bold = opts.bold })
 ---"sizeof", "+", "*", etc.
-M.highlights.operator = Highlight.new("Operator", { fg = c.default.yellow })
+M.highlights.operator = Highlight.new("Operator", { fg = c.default.yellow, italic = opts.italic.operators })
 ---any other keyword
 M.highlights.keyword = Highlight.new("Keyword", { fg = c.default.yellow, bold = opts.bold })
 ---try, catch, throw
@@ -198,8 +198,8 @@ M.highlights.special = Highlight.new("Special", { fg = c.default.yellow })
 
 ---(preferred) text that stands out, HTML links
 M.highlights.underlined = Highlight.new("Underlined", { underline = opts.underline })
-M.highlights.bold = Highlight.new("Bold", { bold = opts.bold })
-M.highlights.italic = Highlight.new("Italic", { italic = opts.italic })
+M.highlights.bold = Highlight.new("Bold", { bold = true })
+M.highlights.italic = Highlight.new("Italic", { italic = true })
 ---("Ignore", below, may be invisible...)
 ---Ignore = Highlight.new("Ignore", { }) ---(preferred) left blank, hidden  |hl-Ignore|
 
@@ -214,10 +214,10 @@ M.highlights.md_code_block = Highlight.new("markdownCodeBlock", { fg = c.default
 ---markdownH1 = Highlight.new("markdownH1", { fg = c.magenta, bold = true })
 ---markdownH2 = Highlight.new("markdownH2", { fg = c.blue, bold = true })
 ---markdownLinkText = Highlight.new("markdownLinkText", { fg = c.blue, underline = true })
-M.highlights.md_italic = Highlight.new("markdownItalic", { fg = c.default.wisteria, italic = opts.italic })
+M.highlights.md_italic = Highlight.new("markdownItalic", { fg = c.default.wisteria, italic = true })
 M.highlights.md_bold = Highlight.new("markdownBold", { fg = c.default.yellow, bold = opts.bold })
 M.highlights.md_code_delim =
-	Highlight.new("markdownCodeDelimiter", { fg = c.default.brown, italic = opts.italic })
+	Highlight.new("markdownCodeDelimiter", { fg = c.default.brown, italic = true })
 M.highlights.md_error = Highlight.new("markdownError", { fg = c.default.fg, bg = c.default["bg+1"] })
 
 return M

@@ -1,6 +1,6 @@
 local c = require("gruber-darker.palette")
 local opts = require("gruber-darker.config").get_opts()
-local vim_hl = require("gruber-darker.highlights.vim")
+local vim_hl = require("gruber-darker.highlights.vim").highlights
 local Highlight = require("gruber-darker.highlight")
 
 local M = {
@@ -24,8 +24,8 @@ end
 -- TSAnnotation        = Highlight.new("", { })    -- For C++/Dart attributes, annotations that can be attached to the code to denote some kind of meta information.
 -- TSAttribute         = Highlight.new("", { })    -- (unstable) TODO: docs
 M.highlights.boolean = Highlight.new("TSBoolean", { fg = c.default.quartz }) -- For booleans.
-M.highlights.character = Highlight.new("TSCharacter", { fg = c.default.green }) -- For characters.
-M.highlights.comment = Highlight.new("TSComment", { fg = c.default.brown }) -- For comment blocks.
+M.highlights.character = Highlight.new("TSCharacter", { link = vim_hl.character }) -- For characters.
+M.highlights.comment = Highlight.new("TSComment", { link = vim_hl.comment }) -- For comment blocks.
 -- TSNote = Highlight.new("TSNote", { fg = c.bg, bg = c.info })
 M.highlights.text_warning = Highlight.new("@text.warning", { fg = c.default.red })
 M.highlights.text_danger = Highlight.new("@text.danger", { fg = c.default.white, bg = c.default.red })
@@ -58,9 +58,9 @@ M.highlights.constant = Highlight.new("TSConstant", { fg = c.default.quartz }) -
 -- ["@punctuation.special"] = Highlight.new("", { fg = c.blue5 }) -- For special punctutation that does not fall in the catagories before.
 
 -- For keywords related to loops.
-M.highlights.repeats = Highlight.new("TSRepeat", { fg = c.default.yellow })
+M.highlights.repeats = Highlight.new("TSRepeat", { link = vim_hl.repeats })
 -- For strings.
-M.highlights.string = Highlight.new("TSString", { fg = c.default.green })
+M.highlights.string = Highlight.new("TSString", { link = vim_hl.string })
 -- ["@string.regex"] = Highlight.new("", { fg = c.blue6 }) -- For regexes.
 -- ["@string.escape"] = Highlight.new("", { fg = c.magenta }) -- For escape characters within a string.
 -- TSSymbol            = Highlight.new("", { })    -- For identifiers referring to symbols or atoms.
@@ -84,8 +84,8 @@ M.highlights.type = Highlight.new("TSType", { fg = c.default.quartz })
 ---Any URI like a link or email.
 M.highlights.uri = Highlight.new("TSURI", { fg = c.default.niagara, underline = opts.underline })
 
-M.highlights.text_diff_add = Highlight.new("@text.diff.add", { link = vim_hl.highlights.diff_add })
-M.highlights.text_diff_delete = Highlight.new("@text.diff.delete", { link = vim_hl.highlights.diff_delete })
-M.highlights.text_diff_change = Highlight.new("@text.diff.change", { link = vim_hl.highlights.diff_change })
+M.highlights.text_diff_add = Highlight.new("@text.diff.add", { link = vim_hl.diff_add })
+M.highlights.text_diff_delete = Highlight.new("@text.diff.delete", { link = vim_hl.diff_delete })
+M.highlights.text_diff_change = Highlight.new("@text.diff.change", { link = vim_hl.diff_change })
 
 return M

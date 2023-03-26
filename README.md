@@ -7,7 +7,7 @@ _A modern Neovim port of a deftheme [adaptation][gruber-darker-theme] of an Emac
 
 ## Installation
 
-### Lazy
+### Lazy (recommended)
 
 ```lua
 { "blazkowolf/gruber-darker.nvim" }
@@ -25,7 +25,7 @@ use "blazkowolf/gruber-darker.nvim"
 Plug 'blazkowolf/gruber-darker.nvim'
 ```
 
-Then, somewhere in your `init.lua`, set the colorscheme like this
+Then, somewhere in your `init.lua`, set the colorscheme
 
 ```lua
 vim.cmd.colorscheme("GruberDarker")
@@ -33,17 +33,39 @@ vim.cmd.colorscheme("GruberDarker")
 
 ## Configuration
 
-Configuration options can be changed by calling `setup()`
-with your preferences prior to loading the colorscheme.
+### Defaults
 
 ```lua
--- Config defaults
-require("gruber-darker").setup({
-  bold = true,
-  italic = true,
-  underline = true,
-  comment_italics = true,
-})
+{
+	bold = true,
+	italic = {
+    strings = true,
+    comments = true,
+    operators = false,
+    folds = true,
+  },
+	underline = true,
+}
+```
+
+### With updated preferences
+
+Change configuration options by calling `setup()`
+prior to loading the colorscheme. Your preferences
+will be merged with the defaults.
+
+```lua
+{
+  "blazkowolf/gruber-darker.nvim",
+  config = function()
+    require("gruber-darker").setup({
+      bold = false,
+      italic = {
+        strings = false,
+      },
+    })
+  end
+}
 ```
 
 ## Credits
