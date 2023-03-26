@@ -87,7 +87,7 @@ M.highlights.float_border = Highlight.new("FloatBorder", { fg = c.default["bg+2"
 ---Popup menu: normal item.
 M.highlights.popup_menu = Highlight.new("Pmenu", { fg = c.default.fg, bg = c.default["bg+1"] })
 ---Popup menu: selected item.
-M.highlights.popup_menu = Highlight.new("PmenuSel", { fg = c.default.fg, bg = c.default["bg+2"] })
+M.highlights.popup_menu_sel = Highlight.new("PmenuSel", { fg = c.default.fg, bg = c.default["bg+2"] })
 ---Popup menu: scrollbar.
 M.highlights.popup_menu_sidebar = Highlight.new("PmenuSbar", { bg = c.default.bg })
 ---Popup menu: Thumb of the scrollbar.

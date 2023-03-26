@@ -11,6 +11,25 @@ function M.on_colorscheme()
 	vim.cmd([[augroup! GruberDarker]])
 end
 
+local function create_autocmds()
+	local gruber_darker_group = vim.api.nvim_create_augroup("GruberDarker", { clear = true })
+	vim.api.nvim_create_autocmd("ColorSchemePre", {
+		group = gruber_darker_group,
+		pattern = "*",
+		callback = function()
+			require("gruber-darker").on_colorscheme()
+		end,
+	})
+
+	vim.api.nvim_create_autocmd("FileType", {
+	 	group = gruber_darker_group,
+	 	pattern = "qf,help",
+	 	callback = function()
+	 		vim.cmd.setlocal("winhighlight=Normal:NormalSB,SignColumn:SignColumnSB")
+	 	end,
+	})
+end
+
 ---Clear current highlights and set Neovim global `colors_name`
 function M.load()
 	if vim.g.colors_name then
@@ -22,22 +41,7 @@ function M.load()
 
 	highlights.setup()
 
-	local gruber_darker_group = vim.api.nvim_create_augroup("GruberDarker", { clear = true })
-	vim.api.nvim_create_autocmd("ColorSchemePre", {
-		group = gruber_darker_group,
-		pattern = "*",
-		callback = function()
-			require("gruber-darker").on_colorscheme()
-		end,
-	})
-
-	-- vim.api.nvim_create_autocmd("FileType", {
-	-- 	group = gruber_darker_group,
-	-- 	pattern = "qf,help",
-	-- 	callback = function()
-	-- 		vim.cmd.setlocal("winhighlight=Normal:NormalSB,SignColumn:SignColumnSB")
-	-- 	end,
-	-- })
+  create_autocmds()
 end
 
 ---Change colorscheme to GruberDarker
