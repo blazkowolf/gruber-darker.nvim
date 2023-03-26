@@ -15,8 +15,7 @@ function M.setup()
 end
 
 ---any comment
-M.highlights.comment =
-	Highlight.new("Comment", { fg = c.default.brown, italic = opts.italic.comments })
+M.highlights.comment = Highlight.new("Comment", { fg = c.default.brown, italic = opts.italic.comments })
 ---used for the columns set with 'colorcolumn'
 M.highlights.color_column = Highlight.new("ColorColumn", { bg = c.default["bg+2"] })
 ---placeholder characters substituted for concealed text (see 'conceallevel')
@@ -54,7 +53,8 @@ M.highlights.vert_split = Highlight.new("VertSplit", { fg = c.default["fg+2"], b
 ---the column separating vertically split windows
 M.highlights.win_separator = Highlight.new("WinSeparator", { fg = c.default["bg+2"], bold = opts.bold })
 ---line used for closed folds
-M.highlights.folded = Highlight.new("Folded", { fg = c.default.brown, bg = c.default["fg+2"], italic = opts.italic.folds })
+M.highlights.folded =
+	Highlight.new("Folded", { fg = c.default.brown, bg = c.default["fg+2"], italic = opts.italic.folds })
 ---'foldcolumn'
 M.highlights.fold_column = Highlight.new("FoldColumn", { fg = c.default.brown, bg = c.default["fg+2"] })
 ---column where |signs| are displayed
@@ -207,8 +207,7 @@ M.highlights.italic = Highlight.new("Italic", { italic = true })
 
 ---(preferred) anything that needs extra attention; mostly the keywords TODO FIXME and XXX
 M.highlights.todo = Highlight.new("Todo", { fg = c.default.bg, bg = c.default.yellow })
-M.highlights.md_heading_delim =
-	Highlight.new("markdownHeadingDelimiter", { fg = c.default.niagara, bold = opts.bold })
+M.highlights.md_heading_delim = Highlight.new("markdownHeadingDelimiter", { fg = c.default.niagara, bold = opts.bold })
 M.highlights.md_code = Highlight.new("markdownCode", { fg = c.default.green })
 M.highlights.md_code_block = Highlight.new("markdownCodeBlock", { fg = c.default.green })
 ---markdownH1 = Highlight.new("markdownH1", { fg = c.magenta, bold = true })
@@ -216,8 +215,7 @@ M.highlights.md_code_block = Highlight.new("markdownCodeBlock", { fg = c.default
 ---markdownLinkText = Highlight.new("markdownLinkText", { fg = c.blue, underline = true })
 M.highlights.md_italic = Highlight.new("markdownItalic", { fg = c.default.wisteria, italic = true })
 M.highlights.md_bold = Highlight.new("markdownBold", { fg = c.default.yellow, bold = opts.bold })
-M.highlights.md_code_delim =
-	Highlight.new("markdownCodeDelimiter", { fg = c.default.brown, italic = true })
+M.highlights.md_code_delim = Highlight.new("markdownCodeDelimiter", { fg = c.default.brown, italic = true })
 M.highlights.md_error = Highlight.new("markdownError", { fg = c.default.fg, bg = c.default["bg+1"] })
 
 return M

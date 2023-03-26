@@ -1,9 +1,9 @@
 local M = {}
 
 local providers = {
-  require("gruber-darker.highlights.vim"),
-  require("gruber-darker.highlights.terminal"),
-  require("gruber-darker.highlights.treesitter"),
+	require("gruber-darker.highlights.vim"),
+	require("gruber-darker.highlights.terminal"),
+	require("gruber-darker.highlights.treesitter"),
 }
 
 ---Set highlights for configured providers

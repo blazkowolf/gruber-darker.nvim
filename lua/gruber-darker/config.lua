@@ -14,12 +14,12 @@
 local DEFAULTS = {
 	bold = true,
 	italic = {
-    strings = true,
-    comments = true,
-    operators = false,
-    folds = true,
-  },
-  -- undercurl = true,
+		strings = true,
+		comments = true,
+		operators = false,
+		folds = true,
+	},
+	-- undercurl = true,
 	underline = true,
 }
 
@@ -35,11 +35,11 @@ local instance = nil
 ---@return GruberDarkerOpts
 ---@nodiscard
 function ConfigMgr.get_opts()
-  if instance ~= nil then
-	  return instance.resolved_opts
-  end
+	if instance ~= nil then
+		return instance.resolved_opts
+	end
 
-  return DEFAULTS
+	return DEFAULTS
 end
 
 ---Set GruberDarker colorscheme options

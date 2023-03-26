@@ -22,11 +22,11 @@ local function create_autocmds()
 	})
 
 	vim.api.nvim_create_autocmd("FileType", {
-	 	group = gruber_darker_group,
-	 	pattern = "qf,help",
-	 	callback = function()
-	 		vim.cmd.setlocal("winhighlight=Normal:NormalSB,SignColumn:SignColumnSB")
-	 	end,
+		group = gruber_darker_group,
+		pattern = "qf,help",
+		callback = function()
+			vim.cmd.setlocal("winhighlight=Normal:NormalSB,SignColumn:SignColumnSB")
+		end,
 	})
 end
 
@@ -41,7 +41,7 @@ function M.load()
 
 	highlights.setup()
 
-  create_autocmds()
+	create_autocmds()
 end
 
 ---Change colorscheme to GruberDarker
