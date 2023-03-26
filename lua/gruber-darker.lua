@@ -1,4 +1,5 @@
 local config = require("gruber-darker.config")
+local highlights = require("gruber-darker.highlights")
 
 local M = {}
 
@@ -18,9 +19,6 @@ function M.load()
 
 	vim.opt.termguicolors = true
 	vim.g.colors_name = "GruberDarker"
-
-	-- set highlights here...
-	local highlights = require("gruber-darker.hl")
 
 	highlights.setup()
 
