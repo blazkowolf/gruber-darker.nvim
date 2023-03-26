@@ -1,14 +1,16 @@
-local terminal_hl = require("gruber-darker.highlights.terminal")
-local vim_hl = require("gruber-darker.highlights.vim")
-local treesitter_hl = require("gruber-darker.highlights.treesitter")
-
 local M = {}
 
----Set highlights for configured groups
+local providers = {
+  require("gruber-darker.highlights.vim"),
+  require("gruber-darker.highlights.terminal"),
+  require("gruber-darker.highlights.treesitter"),
+}
+
+---Set highlights for configured providers
 function M.setup()
-  terminal_hl.setup()
-  vim_hl.setup()
-  treesitter_hl.setup()
+	for _, highlights in ipairs(providers) do
+		highlights:setup()
+	end
 end
 
 return M
