@@ -1,5 +1,5 @@
 local c = require("gruber-darker.palette")
-local config = require("gruber-darker.config").get_resolved_opts()
+local opts = require("gruber-darker.config").get_opts()
 local Highlight = require("gruber-darker.highlight")
 
 local M = {
@@ -16,7 +16,7 @@ end
 
 ---any comment
 M.highlights.comment =
-	Highlight.new("Comment", { fg = c.default.brown, italic = config.comment_italics and config.italic })
+	Highlight.new("Comment", { fg = c.default.brown, italic = opts.comment_italics and opts.italic })
 ---used for the columns set with 'colorcolumn'
 M.highlights.color_column = Highlight.new("ColorColumn", { bg = c.default["bg+2"] })
 ---placeholder characters substituted for concealed text (see 'conceallevel')
@@ -52,7 +52,7 @@ M.highlights.error_msg = Highlight.new("ErrorMsg", { fg = c.default.white, bg = 
 ---the column separating vertically split windows
 M.highlights.vert_split = Highlight.new("VertSplit", { fg = c.default["fg+2"], bg = c.default["bg+1"] })
 ---the column separating vertically split windows
-M.highlights.win_separator = Highlight.new("WinSeparator", { fg = c.default["bg+2"], bold = config.bold })
+M.highlights.win_separator = Highlight.new("WinSeparator", { fg = c.default["bg+2"], bold = opts.bold })
 ---line used for closed folds
 M.highlights.folded = Highlight.new("Folded", { fg = c.default.brown, bg = c.default["fg+2"], italic = true })
 ---'foldcolumn'
@@ -95,7 +95,7 @@ M.highlights.popup_menu_thumb = Highlight.new("PmenuThumb", { bg = c.default.bg 
 ---|hit-enter| prompt and yes/no questions
 M.highlights.question = Highlight.new("Question", { fg = c.default.niagara })
 ---Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
-M.highlights.quick_fix_line = Highlight.new("QuickFixLine", { bg = c.default["bg+2"], bold = config.bold })
+M.highlights.quick_fix_line = Highlight.new("QuickFixLine", { bg = c.default["bg+2"], bold = opts.bold })
 ---Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
 M.highlights.search = Highlight.new("Search", { fg = c.default.black, bg = c.default.yellow })
 ---'incsearch' highlighting; also used for the text replaced with ":s///c"
@@ -121,7 +121,7 @@ M.highlights.tab_line = Highlight.new("TabLine", { bg = c.default.none })
 M.highlights.tab_line_fill = Highlight.new("TabLineFill", { fg = c.default["bg+4"], bg = c.default["bg+1"] })
 ---tab pages line, active tab page label
 M.highlights.tab_line_sel =
-	Highlight.new("TabLineSel", { fg = c.default.yellow, bg = c.default.none, bold = config.bold })
+	Highlight.new("TabLineSel", { fg = c.default.yellow, bg = c.default.none, bold = opts.bold })
 ---titles for output from ":set all", ":autocmd" etc.
 M.highlights.title = Highlight.new("Title", { fg = c.default.quartz })
 ---Visual mode selection
@@ -149,9 +149,9 @@ M.highlights.character = Highlight.new("Character", { fg = c.default.green })
 ---  a number constant: 234, 0xff
 M.highlights.number = Highlight.new("Number", { fg = c.default.fg })
 --- a boolean constant: TRUE, false
-M.highlights.boolean = Highlight.new("Boolean", { fg = c.default.yellow, bold = config.bold })
+M.highlights.boolean = Highlight.new("Boolean", { fg = c.default.yellow, bold = opts.bold })
 ---   a floating point constant: 2.3e10
-M.highlights.float = Highlight.new("Float", { fg = c.default.yellow, bold = config.bold })
+M.highlights.float = Highlight.new("Float", { fg = c.default.yellow, bold = opts.bold })
 ---(preferred) any variable name
 M.highlights.identifier = Highlight.new("Identifier", { fg = c.default["fg+1"] })
 ---function name (also: methods for classes)
@@ -159,17 +159,17 @@ M.highlights.func = Highlight.new("Function", { fg = c.default.niagara })
 ---(preferred) any statement
 M.highlights.statement = Highlight.new("Statement", { fg = c.default.yellow })
 ---if, then, else, endif, switch, etc.
-M.highlights.conditional = Highlight.new("Conditional", { fg = c.default.yellow, bold = config.bold })
+M.highlights.conditional = Highlight.new("Conditional", { fg = c.default.yellow, bold = opts.bold })
 ---for, do, while, etc.
-M.highlights.repeats = Highlight.new("Repeat", { fg = c.default.yellow, bold = config.bold })
+M.highlights.repeats = Highlight.new("Repeat", { fg = c.default.yellow, bold = opts.bold })
 ---case, default, etc.
-M.highlights.label = Highlight.new("Label", { fg = c.default.yellow, bold = config.bold })
+M.highlights.label = Highlight.new("Label", { fg = c.default.yellow, bold = opts.bold })
 ---"sizeof", "+", "*", etc.
 M.highlights.operator = Highlight.new("Operator", { fg = c.default.yellow })
 ---any other keyword
-M.highlights.keyword = Highlight.new("Keyword", { fg = c.default.yellow, bold = config.bold })
+M.highlights.keyword = Highlight.new("Keyword", { fg = c.default.yellow, bold = opts.bold })
 ---try, catch, throw
-M.highlights.exception = Highlight.new("Exception", { fg = c.default.yellow, bold = config.bold })
+M.highlights.exception = Highlight.new("Exception", { fg = c.default.yellow, bold = opts.bold })
 ---(preferred) generic Preprocessor
 M.highlights.pre_proc = Highlight.new("PreProc", { fg = c.default.quartz })
 ---preprocessor #include
@@ -183,11 +183,11 @@ M.highlights.pre_condit = Highlight.new("PreCondit", { fg = c.default.quartz })
 ---(preferred) int, long, char, etc.
 M.highlights.type = Highlight.new("Type", { fg = c.default.quartz })
 ---static, register, volatile, etc.
-M.highlights.storage_class = Highlight.new("StorageClass", { fg = c.default.yellow, bold = config.bold })
+M.highlights.storage_class = Highlight.new("StorageClass", { fg = c.default.yellow, bold = opts.bold })
 ---struct, union, enum, etc.
-M.highlights.structure = Highlight.new("Structure", { fg = c.default.yellow, bold = config.bold })
+M.highlights.structure = Highlight.new("Structure", { fg = c.default.yellow, bold = opts.bold })
 ---A typedef
-M.highlights.typedef = Highlight.new("Typedef", { fg = c.default.yellow, bold = config.bold })
+M.highlights.typedef = Highlight.new("Typedef", { fg = c.default.yellow, bold = opts.bold })
 ---(preferred) any special symbol
 M.highlights.special = Highlight.new("Special", { fg = c.default.yellow })
 ---SpecialChar   = Highlight.new("", { }) --- special character in a constant
@@ -197,9 +197,9 @@ M.highlights.special = Highlight.new("Special", { fg = c.default.yellow })
 ---Debug = Highlight.new("Debug", { fg = c.default["fg+2"] }) ---   debugging statements
 
 ---(preferred) text that stands out, HTML links
-M.highlights.underlined = Highlight.new("Underlined", { underline = config.underline })
-M.highlights.bold = Highlight.new("Bold", { bold = config.bold })
-M.highlights.italic = Highlight.new("Italic", { italic = config.italic })
+M.highlights.underlined = Highlight.new("Underlined", { underline = opts.underline })
+M.highlights.bold = Highlight.new("Bold", { bold = opts.bold })
+M.highlights.italic = Highlight.new("Italic", { italic = opts.italic })
 ---("Ignore", below, may be invisible...)
 ---Ignore = Highlight.new("Ignore", { }) ---(preferred) left blank, hidden  |hl-Ignore|
 
@@ -208,16 +208,16 @@ M.highlights.italic = Highlight.new("Italic", { italic = config.italic })
 ---(preferred) anything that needs extra attention; mostly the keywords TODO FIXME and XXX
 M.highlights.todo = Highlight.new("Todo", { fg = c.default.bg, bg = c.default.yellow })
 M.highlights.md_heading_delim =
-	Highlight.new("markdownHeadingDelimiter", { fg = c.default.niagara, bold = config.bold })
+	Highlight.new("markdownHeadingDelimiter", { fg = c.default.niagara, bold = opts.bold })
 M.highlights.md_code = Highlight.new("markdownCode", { fg = c.default.green })
 M.highlights.md_code_block = Highlight.new("markdownCodeBlock", { fg = c.default.green })
 ---markdownH1 = Highlight.new("markdownH1", { fg = c.magenta, bold = true })
 ---markdownH2 = Highlight.new("markdownH2", { fg = c.blue, bold = true })
 ---markdownLinkText = Highlight.new("markdownLinkText", { fg = c.blue, underline = true })
-M.highlights.md_italic = Highlight.new("markdownItalic", { fg = c.default.wisteria, italic = config.italic })
-M.highlights.md_bold = Highlight.new("markdownBold", { fg = c.default.yellow, bold = config.bold })
+M.highlights.md_italic = Highlight.new("markdownItalic", { fg = c.default.wisteria, italic = opts.italic })
+M.highlights.md_bold = Highlight.new("markdownBold", { fg = c.default.yellow, bold = opts.bold })
 M.highlights.md_code_delim =
-	Highlight.new("markdownCodeDelimiter", { fg = c.default.brown, italic = config.italic })
+	Highlight.new("markdownCodeDelimiter", { fg = c.default.brown, italic = opts.italic })
 M.highlights.md_error = Highlight.new("markdownError", { fg = c.default.fg, bg = c.default["bg+1"] })
 
 return M

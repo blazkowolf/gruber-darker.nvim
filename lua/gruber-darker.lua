@@ -48,9 +48,9 @@ end
 function M.colorscheme() end
 
 ---GruberDarker configuration bootstrapper
----@param opts Options
+---@param opts? GruberDarkerOpts
 function M.setup(opts)
-	config.set(opts or {})
+	config.setup(opts)
 end
 
 return M

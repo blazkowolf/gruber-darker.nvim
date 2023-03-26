@@ -1,5 +1,5 @@
 local c = require("gruber-darker.palette")
-local config = require("gruber-darker.config").get_resolved_opts()
+local opts = require("gruber-darker.config").get_opts()
 local vim_hl = require("gruber-darker.highlights.vim")
 local Highlight = require("gruber-darker.highlight")
 
@@ -82,7 +82,7 @@ M.highlights.type = Highlight.new("TSType", { fg = c.default.quartz })
 -- TSLiteral           = Highlight.new("", { })    -- Literal text.
 
 ---Any URI like a link or email.
-M.highlights.uri = Highlight.new("TSURI", { fg = c.default.niagara, underline = config.underline })
+M.highlights.uri = Highlight.new("TSURI", { fg = c.default.niagara, underline = opts.underline })
 
 M.highlights.text_diff_add = Highlight.new("@text.diff.add", { link = vim_hl.highlights.diff_add })
 M.highlights.text_diff_delete = Highlight.new("@text.diff.delete", { link = vim_hl.highlights.diff_delete })
