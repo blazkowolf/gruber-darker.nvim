@@ -37,7 +37,7 @@ function M.load()
 	end
 
 	vim.opt.termguicolors = true
-	vim.g.colors_name = "GruberDarker"
+	vim.g.colors_name = "gruber-darker"
 
 	highlights.setup()
 

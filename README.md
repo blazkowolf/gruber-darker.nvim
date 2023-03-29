@@ -28,7 +28,7 @@ Plug 'blazkowolf/gruber-darker.nvim'
 Then, somewhere in your `init.lua`, set the colorscheme
 
 ```lua
-vim.cmd.colorscheme("GruberDarker")
+vim.cmd.colorscheme("gruber-darker")
 ```
 
 ## Configuration
@@ -37,14 +37,14 @@ vim.cmd.colorscheme("GruberDarker")
 
 ```lua
 {
-	bold = true,
-	italic = {
+  bold = true,
+  italic = {
     strings = true,
     comments = true,
     operators = false,
     folds = true,
   },
-	underline = true,
+  underline = true,
 }
 ```
 
