@@ -1,5 +1,6 @@
 local c = require("gruber-darker.palette")
 
+---@type HighlightsProvider
 local M = {}
 
 ---Set Neovim terminal colors

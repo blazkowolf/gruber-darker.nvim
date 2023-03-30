@@ -38,12 +38,16 @@ vim.cmd.colorscheme("gruber-darker")
 ```lua
 {
   bold = true,
+  inverse = {
+    signs = true,
+  },
   italic = {
     strings = true,
     comments = true,
     operators = false,
     folds = true,
   },
+  undercurl = true,
   underline = true,
 }
 ```

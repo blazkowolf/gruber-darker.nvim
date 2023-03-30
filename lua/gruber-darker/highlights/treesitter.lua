@@ -1,10 +1,10 @@
-local c = require("gruber-darker.palette")
+local c = require("gruber-darker.palette").default
 local opts = require("gruber-darker.config").get_opts()
 local vim_hl = require("gruber-darker.highlights.vim").highlights
 local Highlight = require("gruber-darker.highlight")
 
+---@type HighlightsProvider
 local M = {
-	---@type table<string, Highlight>
 	highlights = {},
 }
 
@@ -17,21 +17,21 @@ end
 
 -- These groups are for the neovim tree-sitter highlights.
 -- As of writing, tree-sitter support is a WIP, group names may change.
--- By default, most of these groups link to an appropriate Vim group,
+-- By, most of these groups link to an appropriate Vim group,
 -- TSError -> Error for example, so you do not have to define these unless
 -- you explicitly want to support Treesitter's improved syntax awareness.
 
 -- TSAnnotation        = Highlight.new("", { })    -- For C++/Dart attributes, annotations that can be attached to the code to denote some kind of meta information.
 -- TSAttribute         = Highlight.new("", { })    -- (unstable) TODO: docs
-M.highlights.boolean = Highlight.new("TSBoolean", { fg = c.default.quartz }) -- For booleans.
+M.highlights.boolean = Highlight.new("TSBoolean", { fg = c.quartz }) -- For booleans.
 M.highlights.character = Highlight.new("TSCharacter", { link = vim_hl.character }) -- For characters.
 M.highlights.comment = Highlight.new("TSComment", { link = vim_hl.comment }) -- For comment blocks.
 -- TSNote = Highlight.new("TSNote", { fg = c.bg, bg = c.info })
-M.highlights.text_warning = Highlight.new("@text.warning", { fg = c.default.red })
-M.highlights.text_danger = Highlight.new("@text.danger", { fg = c.default.white, bg = c.default.red })
+M.highlights.text_warning = Highlight.new("@text.warning", { fg = c.red })
+M.highlights.text_danger = Highlight.new("@text.danger", { fg = c.white, bg = c.red })
 -- ["@constructor"] = Highlight.new("", { fg = c.magenta }, -- For constructor calls and definitions: `= { })` in Lua, and Java constructors.
-M.highlights.conditional = Highlight.new("TSConditional", { fg = c.default.yellow }) -- For keywords related to conditionnals.
-M.highlights.constant = Highlight.new("TSConstant", { fg = c.default.quartz }) -- For constants
+M.highlights.conditional = Highlight.new("TSConditional", { fg = c.yellow }) -- For keywords related to conditionnals.
+M.highlights.constant = Highlight.new("TSConstant", { fg = c.quartz }) -- For constants
 -- TSConstBuiltin      = Highlight.new("", { })    -- For constant that are built in the language: `nil` in Lua.
 -- TSConstMacro        = Highlight.new("", { })    -- For constants that are defined by macros: `NULL` in C.
 -- TSError             = Highlight.new("", { })    -- For syntax/parser errors.
@@ -66,7 +66,7 @@ M.highlights.string = Highlight.new("TSString", { link = vim_hl.string })
 -- TSSymbol            = Highlight.new("", { })    -- For identifiers referring to symbols or atoms.
 
 ---For types.
-M.highlights.type = Highlight.new("TSType", { fg = c.default.quartz })
+M.highlights.type = Highlight.new("TSType", { fg = c.quartz })
 -- TSTypeBuiltin       = Highlight.new("", { })    -- For builtin types.
 -- ["@variable"] = Highlight.new("", { style = options.styles.variables }) -- Any variable name that does not have another highlight.
 -- ["@variable.builtin"] = Highlight.new("", { fg = c.red }) -- Variable names that are defined by the languages, like `this` or `self`.
@@ -82,7 +82,7 @@ M.highlights.type = Highlight.new("TSType", { fg = c.default.quartz })
 -- TSLiteral           = Highlight.new("", { })    -- Literal text.
 
 ---Any URI like a link or email.
-M.highlights.uri = Highlight.new("TSURI", { fg = c.default.niagara, underline = opts.underline })
+M.highlights.uri = Highlight.new("TSURI", { fg = c.niagara, underline = opts.underline })
 
 M.highlights.text_diff_add = Highlight.new("@text.diff.add", { link = vim_hl.diff_add })
 M.highlights.text_diff_delete = Highlight.new("@text.diff.delete", { link = vim_hl.diff_delete })

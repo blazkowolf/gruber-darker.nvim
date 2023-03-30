@@ -4,8 +4,13 @@
 ---|"operators"
 ---|"folds"
 
+---@alias InvertType
+---|"signs"
+---|"tabline"
+
 ---@class GruberDarkerOpts
 ---@field bold boolean
+---@field invert table<InvertType, boolean>
 ---@field italic table<ItalicType, boolean>
 ---@field undercurl boolean
 ---@field underline boolean
@@ -13,13 +18,17 @@
 ---@type GruberDarkerOpts
 local DEFAULTS = {
 	bold = true,
+	invert = {
+		signs = true,
+		tabline = false,
+	},
 	italic = {
 		strings = true,
 		comments = true,
 		operators = false,
 		folds = true,
 	},
-	-- undercurl = true,
+	undercurl = true,
 	underline = true,
 }
 
