@@ -6,6 +6,7 @@ local M = {}
 ---@type HighlightsProvider[]
 local providers = {
 	require("gruber-darker.highlights.colorscheme"),
+	require("gruber-darker.highlights.lsp"),
 	require("gruber-darker.highlights.vim"),
 	require("gruber-darker.highlights.terminal"),
 	require("gruber-darker.highlights.treesitter"),

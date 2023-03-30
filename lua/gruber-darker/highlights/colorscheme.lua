@@ -63,13 +63,13 @@ M.highlights.wisteria_bold = Highlight.new("GruberDarkerWisteriaBold", { fg = c.
 
 -- Signs
 
-M.highlights.red_sign = Highlight.new("GruberDarkerRedSign", { fg = c.red, bg = c.bg, reverse = opts.invert.signs })
+M.highlights.red_sign = Highlight.new("GruberDarkerRedSign", { fg = c.red, reverse = opts.invert.signs })
 M.highlights.quartz_sign =
-	Highlight.new("GruberDarkerQuartzSign", { fg = c.quartz, bg = c.bg, reverse = opts.invert.signs })
+	Highlight.new("GruberDarkerQuartzSign", { fg = c.quartz, reverse = opts.invert.signs })
 M.highlights.niagara_sign =
-	Highlight.new("GruberDarkerNiagaraSign", { fg = c.niagara, bg = c.bg, reverse = opts.invert.signs })
+	Highlight.new("GruberDarkerNiagaraSign", { fg = c.niagara, reverse = opts.invert.signs })
 M.highlights.wisteria_sign =
-	Highlight.new("GruberDarkerWisteriaSign", { fg = c.wisteria, bg = c.bg, reverse = opts.invert.signs })
+	Highlight.new("GruberDarkerWisteriaSign", { fg = c.wisteria, reverse = opts.invert.signs })
 
 -- Underlines
 

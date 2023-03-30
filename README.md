@@ -40,8 +40,8 @@ vim.cmd.colorscheme("gruber-darker")
 ```lua
 {
   bold = true,
-  inverse = {
-    signs = true,
+  invert = {
+    signs = false,
   },
   italic = {
     strings = true,

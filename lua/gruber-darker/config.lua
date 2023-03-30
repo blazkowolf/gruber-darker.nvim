@@ -19,7 +19,7 @@
 local DEFAULTS = {
 	bold = true,
 	invert = {
-		signs = true,
+		signs = false,
 		tabline = false,
 	},
 	italic = {
