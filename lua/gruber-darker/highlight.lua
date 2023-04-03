@@ -59,6 +59,7 @@ end
 
 ---Set global highlight for the group this is associated with
 function Highlight:setup()
+  -- print(self.group)
 	vim.api.nvim_set_hl(0, self.group, get_hl_definition_map(self.opts))
 end
 
