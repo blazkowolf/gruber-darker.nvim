@@ -5,7 +5,7 @@ _A modern Neovim port of a deftheme [adaptation][gruber-darker-theme] of an Emac
 
 **This is a work in progress**
 
-![image](https://user-images.githubusercontent.com/9439488/228709407-d3c1cbb7-3639-4e29-a05d-c63270dae019.png)
+![image](https://user-images.githubusercontent.com/9439488/229402983-b27a2fc4-d938-4ed0-8f7f-7711f73aa985.png)
 
 ## Installation
 
