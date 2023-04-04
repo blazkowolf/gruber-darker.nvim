@@ -1,4 +1,4 @@
-local c = require("gruber-darker.palette").default
+local c = require("gruber-darker.palette")
 local opts = require("gruber-darker.config").get_opts()
 local vim_hl = require("gruber-darker.highlights.vim").highlights
 local gruber_hl = require("gruber-darker.highlights.colorscheme").highlights
@@ -209,7 +209,7 @@ M.highlights.text_diff_change = Highlight.new("@text.diff.change", { link = vim_
 ---XML tag names
 M.highlights.tag = Highlight.new("@tag", { link = vim_hl.tag })
 ---XML tag attributes
-M.highlights.tag_attribute = Highlight.new("@tag.attribute", { link = vim_hl.identifier })
+M.highlights.tag_attribute = Highlight.new("@tag.attribute", { link = M.highlights.field })
 ---XML tag delimiters
 M.highlights.tag_delimiter = Highlight.new("@tag.delimiter", { link = vim_hl.delimiter })
 

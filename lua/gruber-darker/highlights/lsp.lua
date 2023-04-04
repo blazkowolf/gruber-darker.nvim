@@ -1,5 +1,5 @@
 local Highlight = require("gruber-darker.highlight")
-local c = require("gruber-darker.palette").default
+local c = require("gruber-darker.palette")
 local opts = require("gruber-darker.config").get_opts()
 local gruber_hl = require("gruber-darker.highlights.colorscheme").highlights
 
@@ -29,5 +29,18 @@ M.highlights.diagnostic_underline_info = Highlight.new("DiagnosticUnderlineInfo"
 M.highlights.diagnostic_hint = Highlight.new("DiagnosticHint", { link = gruber_hl.wisteria })
 M.highlights.diagnostic_sign_hint = Highlight.new("DiagnosticSignHint", { link = gruber_hl.wisteria_sign })
 M.highlights.diagnostic_underline_hint = Highlight.new("DiagnosticUnderlineHint", { link = gruber_hl.wisteria_underline })
+
+---Used for highlighting "text" references
+-- M.highlights.lsp_reference_text = Highlight.new("LspReferenceText", {})
+---Used for highlighting "read" references
+-- M.highlights.lsp_reference_read = Highlight.new("LspReferenceRead", {})
+---Used for highlighting "write" references
+-- M.highlights.lsp_reference_write = Highlight.new("LspReferenceWrite", {})
+---Used to color the virtual text of the codelens.
+-- M.highlights.lsp_code_lens = Highlight.new("LspCodeLens", {})
+---Used to color the separator between two or more code lenses.
+-- M.highlights.lsp_code_lens_separator = Highlight.new("LspCodeLensSeparator", {})
+---Used to highlight the active parameter in the signature help.
+-- M.highlights.lsp_signature_active_parameter = Highlight.new("LspSignatureActiveParameter", {})
 
 return M

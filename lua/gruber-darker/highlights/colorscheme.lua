@@ -1,5 +1,5 @@
 local Highlight = require("gruber-darker.highlight")
-local c = require("gruber-darker.palette").default
+local c = require("gruber-darker.palette")
 local opts = require("gruber-darker.config").get_opts()
 
 ---@type HighlightsProvider

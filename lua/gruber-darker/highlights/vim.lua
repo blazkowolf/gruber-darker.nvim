@@ -1,8 +1,9 @@
 local Highlight = require("gruber-darker.highlight")
-local c = require("gruber-darker.palette").default
+local c = require("gruber-darker.palette")
 local opts = require("gruber-darker.config").get_opts()
 local gruber_hl = require("gruber-darker.highlights.colorscheme").highlights
 
+---@type HighlightsProvider
 local M = {
 	highlights = {},
 }
@@ -76,7 +77,7 @@ M.highlights.mode_msg = Highlight.new("ModeMsg", { link = gruber_hl.fg2 })
 ---|more-prompt|
 M.highlights.more_msg = Highlight.new("MoreMsg", { fg = c["fg+2"] })
 ---'@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
-M.highlights.non_text = Highlight.new("NonText", { fg = c["fg+2"] })
+M.highlights.non_text = Highlight.new("NonText", { link = M.highlights.end_of_buffer })
 ---Normal text
 M.highlights.normal = Highlight.new("Normal", { fg = c.fg, bg = c.bg })
 ---Normal text in non-current windows
@@ -85,7 +86,7 @@ M.highlights.normal_non_current = Highlight.new("NormalNC", { fg = c.fg, bg = c[
 M.highlights.normal_sidebar = Highlight.new("NormalSB", { fg = c.fg, bg = c["bg-1"] })
 ---Normal text in floating windows.
 M.highlights.normal_float = Highlight.new("NormalFloat", { fg = c.fg, bg = c.bg })
-M.highlights.float_border = Highlight.new("FloatBorder", { fg = c["bg+2"], bg = c["bg-1"] })
+M.highlights.float_border = Highlight.new("FloatBorder", { fg = c["bg+4"], bg = c.none })
 
 -- Popup
 
