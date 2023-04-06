@@ -5,13 +5,13 @@ local gruber_hl = require("gruber-darker.highlights.colorscheme").highlights
 
 ---@type HighlightsProvider
 local M = {
-  highlights = {},
+	highlights = {},
 }
 
 function M.setup()
-  for _, value in pairs(M.highlights) do
-    value:setup()
-  end
+	for _, value in pairs(M.highlights) do
+		value:setup()
+	end
 end
 
 M.highlights.diagnostic_error = Highlight.new("DiagnosticError", { link = gruber_hl.red_bold })
@@ -28,7 +28,8 @@ M.highlights.diagnostic_underline_info = Highlight.new("DiagnosticUnderlineInfo"
 
 M.highlights.diagnostic_hint = Highlight.new("DiagnosticHint", { link = gruber_hl.wisteria })
 M.highlights.diagnostic_sign_hint = Highlight.new("DiagnosticSignHint", { link = gruber_hl.wisteria_sign })
-M.highlights.diagnostic_underline_hint = Highlight.new("DiagnosticUnderlineHint", { link = gruber_hl.wisteria_underline })
+M.highlights.diagnostic_underline_hint =
+	Highlight.new("DiagnosticUnderlineHint", { link = gruber_hl.wisteria_underline })
 
 ---Used for highlighting "text" references
 -- M.highlights.lsp_reference_text = Highlight.new("LspReferenceText", {})

@@ -53,8 +53,7 @@ M.highlights.darker_niagara = Highlight.new("GruberDarkerDarkestNiagara", { fg =
 M.highlights.darker_niagara_bold =
 	Highlight.new("GruberDarkerDarkestNiagaraBold", { fg = c["niagara-2"], bold = opts.bold })
 M.highlights.dark_niagara = Highlight.new("GruberDarkerDarkNiagara", { fg = c["niagara-1"] })
-M.highlights.dark_niagara_bold =
-	Highlight.new("GruberDarkerDarkNiagaraBold", { fg = c["niagara-1"], bold = opts.bold })
+M.highlights.dark_niagara_bold = Highlight.new("GruberDarkerDarkNiagaraBold", { fg = c["niagara-1"], bold = opts.bold })
 M.highlights.niagara = Highlight.new("GruberDarkerNiagara", { fg = c.niagara })
 M.highlights.niagara_bold = Highlight.new("GruberDarkerNiagaraBold", { fg = c.niagara, bold = opts.bold })
 
@@ -66,17 +65,15 @@ M.highlights.wisteria_bold = Highlight.new("GruberDarkerWisteriaBold", { fg = c.
 M.highlights.red_sign = Highlight.new("GruberDarkerRedSign", { fg = c.red, reverse = opts.invert.signs })
 M.highlights.yellow_sign = Highlight.new("GruberDarkerYellowSign", { fg = c.yellow, reverse = opts.invert.signs })
 M.highlights.green_sign = Highlight.new("GruberDarkerGreenSign", { fg = c.green, reverse = opts.invert.signs })
-M.highlights.quartz_sign =
-	Highlight.new("GruberDarkerQuartzSign", { fg = c.quartz, reverse = opts.invert.signs })
-M.highlights.niagara_sign =
-	Highlight.new("GruberDarkerNiagaraSign", { fg = c.niagara, reverse = opts.invert.signs })
-M.highlights.wisteria_sign =
-	Highlight.new("GruberDarkerWisteriaSign", { fg = c.wisteria, reverse = opts.invert.signs })
+M.highlights.quartz_sign = Highlight.new("GruberDarkerQuartzSign", { fg = c.quartz, reverse = opts.invert.signs })
+M.highlights.niagara_sign = Highlight.new("GruberDarkerNiagaraSign", { fg = c.niagara, reverse = opts.invert.signs })
+M.highlights.wisteria_sign = Highlight.new("GruberDarkerWisteriaSign", { fg = c.wisteria, reverse = opts.invert.signs })
 
 -- Underlines
 
 M.highlights.red_underline = Highlight.new("GruberDarkerRedUnderline", { sp = c.red, undercurl = opts.undercurl })
-M.highlights.yellow_underline = Highlight.new("GruberDarkerYellowUnderline", { sp = c.yellow, undercurl = opts.undercurl })
+M.highlights.yellow_underline =
+	Highlight.new("GruberDarkerYellowUnderline", { sp = c.yellow, undercurl = opts.undercurl })
 M.highlights.green_underline = Highlight.new("GruberDarkerGreenUnderline", { sp = c.green, undercurl = opts.undercurl })
 M.highlights.quartz_underline =
 	Highlight.new("GruberDarkerQuartzUnderline", { sp = c.quartz, undercurl = opts.undercurl })

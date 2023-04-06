@@ -71,9 +71,9 @@ M.highlights.match_paren = Highlight.new("MatchParen", { fg = c.fg, bg = c.wiste
 ---'showmode' message (e.g., "---INSERT ---")
 M.highlights.mode_msg = Highlight.new("ModeMsg", { link = gruber_hl.fg2 })
 ---Area for messages and cmdline
--- M.highlights.msg_area = Highlight.new("MsgArea", { fg = c.fg_dark }) 
+-- M.highlights.msg_area = Highlight.new("MsgArea", { fg = c.fg_dark })
 ---Separator for scrolled messages, `msgsep` flag of 'display'
--- M.highlights.msg_separator = Highlight.new("MsgSeparator", { }), 
+-- M.highlights.msg_separator = Highlight.new("MsgSeparator", { }),
 ---|more-prompt|
 M.highlights.more_msg = Highlight.new("MoreMsg", { fg = c["fg+2"] })
 ---'@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
@@ -210,9 +210,9 @@ M.highlights.structure = Highlight.new("Structure", { link = gruber_hl.yellow_bo
 M.highlights.typedef = Highlight.new("Typedef", { link = gruber_hl.yellow_bold })
 ---(preferred) any special symbol
 M.highlights.special = Highlight.new("Special", { link = gruber_hl.yellow })
-M.highlights.special_char   = Highlight.new("SpecialChar", { link = gruber_hl.yellow }) --- special character in a constant
+M.highlights.special_char = Highlight.new("SpecialChar", { link = gruber_hl.yellow }) --- special character in a constant
 ---You can use CTRL-] on this
-M.highlights.tag = Highlight.new("Tag", { link = gruber_hl.yellow }) 
+M.highlights.tag = Highlight.new("Tag", { link = gruber_hl.yellow })
 ---Character that needs attention
 M.highlights.delimiter = Highlight.new("Delimiter", { link = gruber_hl.fg0 })
 ---Special things inside a comment

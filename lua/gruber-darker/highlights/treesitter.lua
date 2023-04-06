@@ -187,7 +187,7 @@ M.highlights.text_uri = Highlight.new("@text.uri", { fg = c.niagara, underline =
 ---text indicating the type of an environment
 -- M.highlights.text_environment_name = Highlight.new("@text.environment.name", {})
 ---text references, footnotes, citations, etc.
--- M.highlights.text_reference = Highlight.new("@text.reference", {})
+M.highlights.text_reference = Highlight.new("@text.reference", { link = gruber_hl.yellow_bold })
 
 ---todo notes
 M.highlights.text_todo = Highlight.new("@text.todo", { link = vim_hl.todo })
