@@ -3,7 +3,8 @@
 _A modern Neovim port of a deftheme [adaptation][gruber-darker-theme] of an Emacs
 [port][gruber-darker] of a BBEdit [colorscheme][gruber-dark]_
 
-**This is a work in progress**
+> **Note**
+> This is a work in progress, but fairly stable
 
 ![image](https://user-images.githubusercontent.com/9439488/229402983-b27a2fc4-d938-4ed0-8f7f-7711f73aa985.png)
 
@@ -60,17 +61,17 @@ Change configuration options by calling `setup()`
 prior to loading the colorscheme. Your preferences
 will be merged with the defaults.
 
+For example, with [Lazy](https://github.com/folke/lazy.nvim.git)...
+
 ```lua
 {
   "blazkowolf/gruber-darker.nvim",
-  config = function()
-    require("gruber-darker").setup({
-      bold = false,
-      italic = {
-        strings = false,
-      },
-    })
-  end
+  opts = {
+    bold = false,
+    italic = {
+      strings = false,
+    },
+  },
 }
 ```
 
