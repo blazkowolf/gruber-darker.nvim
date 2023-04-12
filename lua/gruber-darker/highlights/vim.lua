@@ -210,7 +210,8 @@ M.highlights.structure = Highlight.new("Structure", { link = gruber_hl.yellow_bo
 M.highlights.typedef = Highlight.new("Typedef", { link = gruber_hl.yellow_bold })
 ---(preferred) any special symbol
 M.highlights.special = Highlight.new("Special", { link = gruber_hl.yellow })
-M.highlights.special_char = Highlight.new("SpecialChar", { link = gruber_hl.yellow }) --- special character in a constant
+--- special character in a constant
+M.highlights.special_char = Highlight.new("SpecialChar", { link = gruber_hl.yellow })
 ---You can use CTRL-] on this
 M.highlights.tag = Highlight.new("Tag", { link = gruber_hl.yellow })
 ---Character that needs attention

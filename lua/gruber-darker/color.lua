@@ -5,7 +5,7 @@ Color.__index = Color
 
 ---Create a new color
 ---@param value integer
----@return table
+---@return Color
 function Color.new(value)
 	local color = setmetatable({
 		value = value,
@@ -14,7 +14,7 @@ function Color.new(value)
 end
 
 ---Create the "NONE" color
----@return table
+---@return Color
 function Color.none()
 	local color = setmetatable({
 		value = nil,

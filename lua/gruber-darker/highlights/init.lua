@@ -2,7 +2,7 @@ local M = {}
 
 ---@class HighlightsProvider
 ---@field highlights table<string, Highlight>
----@field setup fun()
+---@field setup fun() Set highlights
 
 ---@type HighlightsProvider[]
 local providers = {
