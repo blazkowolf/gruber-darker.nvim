@@ -30,6 +30,8 @@ M.highlights.diagnostic_sign_hint = Highlight.new("DiagnosticSignHint", { link =
 M.highlights.diagnostic_underline_hint =
 	Highlight.new("DiagnosticUnderlineHint", { link = gruber_hl.wisteria_underline })
 
+M.highlights.diagnostic_unnecessary = Highlight.new("DiagnosticUnnecessary", { link = M.highlights.diagnostic_underline_hint })
+
 ---Used for highlighting "text" references
 -- M.highlights.lsp_reference_text = Highlight.new("LspReferenceText", {})
 ---Used for highlighting "read" references
