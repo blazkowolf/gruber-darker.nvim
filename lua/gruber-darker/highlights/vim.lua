@@ -145,7 +145,7 @@ M.highlights.tab_line_sel = Highlight.new("TabLineSel", { fg = c.yellow, bg = c.
 ---Titles for output from ":set all", ":autocmd" etc.
 M.highlights.title = Highlight.new("Title", { link = gruber_hl.quartz })
 ---Visual mode selection
-M.highlights.visual = Highlight.new("Visual", { bg = c["bg+2"] })
+M.highlights.visual = Highlight.new("Visual", { bg = c["bg+2"], reverse = opts.invert.visual })
 ---Visual mode selection when vim is "Not Owning the Selection".
 M.highlights.visual_nos = Highlight.new("VisualNOS", { link = gruber_hl.red })
 ---Warning messages
