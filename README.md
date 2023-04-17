@@ -43,6 +43,8 @@ vim.cmd.colorscheme("gruber-darker")
   bold = true,
   invert = {
     signs = false,
+    tabline = false,
+    visual = false,
   },
   italic = {
     strings = true,

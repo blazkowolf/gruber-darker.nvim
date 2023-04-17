@@ -42,6 +42,12 @@ M.highlights.diff_change = Highlight.new("DiffChange", { fg = c.yellow, bg = c.n
 M.highlights.diff_delete = Highlight.new("DiffDelete", { fg = c["red+1"], bg = c.none })
 ---Diff mode: Changed text within a changed line |diff.txt|
 M.highlights.diff_text = Highlight.new("DiffText", { fg = c.yellow, bg = c.none })
+
+---Fugitive highlights; might need separate provider for git related plugins
+M.highlights.diff_added = Highlight.new("diffAdded", { link = M.highlights.diff_add })
+M.highlights.diff_removed = Highlight.new("diffRemoved", { link = M.highlights.diff_delete })
+M.highlights.diff_line = Highlight.new("diffLine", { link = M.highlights.diff_change })
+
 ---Filler lines (~) after the end of the buffer.  By, this is highlighted like |hl-NonText|.
 M.highlights.end_of_buffer = Highlight.new("EndOfBuffer", { fg = c["bg+4"], bg = c.none })
 ---Cursor in a focused terminal
@@ -145,7 +151,7 @@ M.highlights.tab_line_sel = Highlight.new("TabLineSel", { fg = c.yellow, bg = c.
 ---Titles for output from ":set all", ":autocmd" etc.
 M.highlights.title = Highlight.new("Title", { link = gruber_hl.quartz })
 ---Visual mode selection
-M.highlights.visual = Highlight.new("Visual", { bg = c["bg+2"] })
+M.highlights.visual = Highlight.new("Visual", { bg = c["bg+2"], reverse = opts.invert.visual })
 ---Visual mode selection when vim is "Not Owning the Selection".
 M.highlights.visual_nos = Highlight.new("VisualNOS", { link = gruber_hl.red })
 ---Warning messages

@@ -7,6 +7,7 @@
 ---@alias InvertType
 ---|"signs"
 ---|"tabline"
+---|"visual"
 
 ---@class GruberDarkerOpts
 ---@field bold boolean
@@ -21,6 +22,7 @@ local DEFAULTS = {
 	invert = {
 		signs = false,
 		tabline = false,
+		visual = false,
 	},
 	italic = {
 		strings = true,
