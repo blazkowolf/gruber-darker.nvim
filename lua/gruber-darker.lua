@@ -1,5 +1,4 @@
 local config = require("gruber-darker.config")
-local highlights = require("gruber-darker.highlights")
 
 local M = {}
 
@@ -46,6 +45,8 @@ end
 
 ---Clear current highlights and set Neovim global `colors_name`
 function M.load()
+	local highlights = require("gruber-darker.highlights")
+
 	if vim.g.colors_name then
 		vim.cmd.hi("clear")
 	end
