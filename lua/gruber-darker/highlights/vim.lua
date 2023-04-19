@@ -87,7 +87,7 @@ M.highlights.non_text = Highlight.new("NonText", { link = M.highlights.end_of_bu
 ---Normal text
 M.highlights.normal = Highlight.new("Normal", { fg = c.fg, bg = c.bg })
 ---Normal text in non-current windows
-M.highlights.normal_non_current = Highlight.new("NormalNC", { fg = c.fg, bg = c["bg-1"] })
+M.highlights.normal_non_current = Highlight.new("NormalNC", { fg = c.fg, bg = c.bg })
 ---Normal text in sidebar
 M.highlights.normal_sidebar = Highlight.new("NormalSB", { fg = c.fg, bg = c["bg-1"] })
 ---Normal text in floating windows.
