@@ -32,6 +32,10 @@ M.highlights.diagnostic_underline_hint =
 
 M.highlights.diagnostic_unnecessary = Highlight.new("DiagnosticUnnecessary", { link = M.highlights.diagnostic_underline_hint })
 
+---LspSaga floating windows
+M.highlights.saga_normal = Highlight.new("SagaNormal", { link = vim_hl.normal_float })
+M.highlights.saga_border = Highlight.new("SagaBorder", { link = vim_hl.float_border })
+
 ---Used for highlighting "text" references
 -- M.highlights.lsp_reference_text = Highlight.new("LspReferenceText", {})
 ---Used for highlighting "read" references
