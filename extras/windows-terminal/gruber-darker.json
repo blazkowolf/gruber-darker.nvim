@@ -1,0 +1,29 @@
+{
+  "$help": "https://aka.ms/terminal-documentation",
+  "$schema": "https://aka.ms/terminal-profiles-schema",
+  "schemes": [
+    {
+      "name": "Gruber Darker",
+      "background": "#181818",
+      "foreground": "#E4E4E4",
+      "cursorColor": "#FFDD33",
+      "selectionBackground": "#FFFFFF",
+      "black": "#181818",
+      "brightBlack": "#52494E",
+      "white": "#E4E4E4",
+      "brightWhite": "#F5F5F5",
+      "blue": "#96A6C8",
+      "brightBlue": "#52494E",
+      "cyan": "#95A99F",
+      "brightCyan": "#95A99F",
+      "green": "#73D936",
+      "brightGreen": "#73D936",
+      "purple": "#9E95C7",
+      "brightPurple": "#9E95C7",
+      "red": "#F43841",
+      "brightRed": "#FF4F58",
+      "yellow": "#FFDD33",
+      "brightYellow": "#FFDD33"
+    }
+  ]
+}
