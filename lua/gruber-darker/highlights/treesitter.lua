@@ -24,7 +24,7 @@ end
 ---Line and block comments
 M.highlights.comment = Highlight.new("@comment", { link = vim_hl.comment })
 ---Comments documenting code
-M.highlights.comment_documentation = Highlight.new("@comment.documentation", { link = gruber_hl.green })
+M.highlights.comment_documentation = Highlight.new("@comment.documentation", { link = gruber_hl.green, italic = opts.italic.comments })
 M.highlights.comment_luadoc = Highlight.new("@comment.luadoc", { link = M.highlights.comment_documentation })
 ---Syntax/parser errors
 M.highlights.error = Highlight.new("@error", {})
@@ -44,7 +44,7 @@ M.highlights.punctuation_delimiter = Highlight.new("@punctuation.delimiter", { l
 ---Brackets (e.g. `()` / `{}` / `[]`)
 M.highlights.punctuation_bracket = Highlight.new("@punctuation.bracket", { link = gruber_hl.wisteria })
 ---Special symbols (e.g. `{}` in string interpolation)
-M.highlights.punctuation_special = Highlight.new("punctuation.special", { link = gruber_hl.brown })
+M.highlights.punctuation_special = Highlight.new("@punctuation.special", { link = gruber_hl.brown })
 
 -- Literals
 
