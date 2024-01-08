@@ -91,7 +91,7 @@ M.highlights.normal_non_current = Highlight.new("NormalNC", { fg = c.fg, bg = c.
 ---Normal text in sidebar
 M.highlights.normal_sidebar = Highlight.new("NormalSB", { fg = c.fg, bg = c["bg-1"] })
 ---Normal text in floating windows.
-M.highlights.normal_float = Highlight.new("NormalFloat", { fg = c.fg, bg = c.bg })
+M.highlights.normal_float = Highlight.new("NormalFloat", { fg = c.fg, bg = c["bg+1"] })
 M.highlights.float_border = Highlight.new("FloatBorder", { fg = c["bg+4"], bg = c.none })
 
 -- Popup
