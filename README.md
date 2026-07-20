@@ -10,6 +10,12 @@ _A modern Neovim port of a deftheme [adaptation][gruber-darker-theme] of an Emac
 
 ## Installation
 
+### Native Package Manager (Neovim >= 0.12.0)
+
+```lua
+vim.pack.add({ src = "https://github.com/blazkowolf/gruber-darker.nvim" })
+```
+
 ### Lazy (recommended)
 
 ```lua
