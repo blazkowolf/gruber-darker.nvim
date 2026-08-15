@@ -14,6 +14,7 @@ local providers = {
 	require("gruber-darker.highlights.cmp"),
 	require("gruber-darker.highlights.telescope"),
 	require("gruber-darker.highlights.rainbow"),
+	require("gruber-darker.highlights.compile-mode"),
 }
 
 ---Set highlights for configured providers
