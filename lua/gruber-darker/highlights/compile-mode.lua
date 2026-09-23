@@ -12,7 +12,6 @@ function M.setup()
 	end
 end
 
-M.highlights.compile_mode_message = Highlight.new("CompileModeMessage", { link = gruber_hl.fg0 , underline=true})
 M.highlights.compile_mode_message_row = Highlight.new("CompileModeMessageRow", { link = gruber_hl.yellow })
 M.highlights.compile_mode_message_col = Highlight.new("CompileModeMessageCol", { link = gruber_hl.green })
 
